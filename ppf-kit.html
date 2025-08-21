@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPF Kit - Elite Auto Mods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* All styles are copied directly from index.html for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+        :root {
+            --bg-color: #EDF2F4;
+            --primary-text: #2B2D42;
+            --secondary-text: #2B2D42;
+            --accent-color: #D90429;
+            --heading-color: #EF233C;
+            --card-base: #eaebed;
+            --shadow-dark: #D0D3D6;
+            --shadow-light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'DM Serif Text', serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+        }
+
+        .neumorphic-card {
+            background-color: var(--card-base);
+            box-shadow: 10px 10px 20px var(--shadow-dark),
+                        -10px -10px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .neumorphic-card:hover {
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                        -6px -6px 12px var(--shadow-light);
+            transform: translateY(-2px);
+        }
+        
+        .neumorphic-button-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                        -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            border-radius: 0.5rem;
+        }
+        
+        .neumorphic-button-primary:hover {
+            background-color: #EF233C;
+            transform: translateY(-2px);
+        }
+        
+        .neumorphic-button-primary:active {
+             box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2);
+             transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+    <header class="bg-[var(--bg-color)] shadow-md py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-[25px] font-bold text-[var(--accent-color)]">
+                Elite<span class="text-[var(--primary-text)]">Mods</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html#about" class="text-[25px] text-[var(--primary-text)]
+                    hover:text-[var(--accent-color)] transition-colors duration-300">
+                    About Us</a>
+                <button class="neumorphic-button py-2 px-6 text-[20px] font-medium">
+                    Login / Sign Up
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-12 px-6 md:px-12">
+        <h1 class="text-[40px] font-extrabold mb-10 leading-tight text-[var(--heading-color)] text-center">
+            Premium Paint Protection Film (PPF) Kits
+        </h1>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://images.unsplash.com/photo-1582234057077-94d07d19472e?q=80&w=2624&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="EliteMods PPF Kit" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">EliteMods ClearShield PPF</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Our signature self-healing, ultra-clear film for ultimate paint protection and gloss retention.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹30,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.xpel.com/assets/images/Xpel-Ultimate-Plus-Product-Header-min.jpg" 
+                    alt="Xpel Ultimate Plus PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Xpel Ultimate Plus PPF</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Industry-leading self-healing film with incredible clarity and stain resistance.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹55,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.3m.com/3m/en_US/company-us/all-3m-products/~/3M-Scotchgard-Paint-Protection-Film-Pro-Series/?N=5002385+8710688+8711405+8720539+8720542+8720760+8722247+&rt=rud" 
+                    alt="3M Scotchgard Pro Series PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">3M Scotchgard Pro Series</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Proven protection against chips, scratches, and stains with exceptional durability.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹48,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.suntekfilms.com/images/default-source/ppf/reaction_product_page_header_optimized.jpg" 
+                    alt="SunTek Reaction PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">SunTek Reaction PPF</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Combines the best features of PPF and ceramic coating for superior stain resistance and protection.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹52,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://cdn11.bigcommerce.com/s-x5z7ls/images/stencil/1280x1280/products/289/1012/llumar_valor_ppf__96147.1633534164.jpg?c=2" 
+                    alt="Llumar Valor PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Llumar Valor PPF</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Features a hydrophobic topcoat for easy cleaning and excellent protection against road debris.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹49,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://stek-usa.com/cdn/shop/files/DYNOshield_Main-Product.jpg?v=1686862590&width=1500"
+                    alt="STEK DynoShield PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">STEK DynoShield PPF</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Advanced self-healing, hydrophobic, and anti-contamination properties for pristine paint.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹58,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://gswf.com/cdn/shop/products/PPF_DYNOlite_2000x.jpg?v=1626296317"
+                    alt="GSWF DynoLite PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">GSWF DynoLite PPF</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    A strong, clear film offering superior gloss and effective protection against road hazards.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹45,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://images.ctfassets.net/m98w7d27e9n2/7kL3z4E4N43pX6oPjW3tB7/17d0d0232b7e19a4e0c3b0f590a3b2b4/SPR-SUPR-PROT-FILM.jpg"
+                    alt="Avery Dennison SPF-XI" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Avery Dennison SPF-XI</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    High-performance film with enhanced clarity and self-healing properties for lasting finish protection.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹50,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://ceramicpro.com/wp-content/uploads/2021/08/kavaca-product-page.jpg"
+                    alt="Ceramic Pro Kavaca PPF" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Ceramic Pro Kavaca</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Instant self-healing and superior hydrophobic properties for easy cleaning and maximum paint protection.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹62,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-[var(--bg-color)] py-8 text-center text-[20px] text-[var(--secondary-text)] mt-16">
+        <p>&copy; 2025 Elite Auto Mods. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

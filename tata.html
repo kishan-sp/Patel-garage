@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Parts - Elite Auto Mods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* All styles are copied directly from index.html for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+        :root {
+            --bg-color: #EDF2F4;
+            --primary-text: #2B2D42;
+            --secondary-text: #2B2D42;
+            --accent-color: #D90429;
+            --heading-color: #EF233C;
+            --card-base: #eaebed;
+            --shadow-dark: #D0D3D6;
+            --shadow-light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'DM Serif Text', serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+        }
+
+        .neumorphic-card {
+            background-color: var(--card-base);
+            box-shadow: 10px 10px 20px var(--shadow-dark),
+                        -10px -10px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .neumorphic-card:hover {
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                        -6px -6px 12px var(--shadow-light);
+            transform: translateY(-2px);
+        }
+
+        .neumorphic-button {
+            background-color: var(--card-base);
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                        -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            color: var(--primary-text);
+            border-radius: 9999px;
+            border: 2px solid var(--primary-text);
+        }
+
+        .neumorphic-button:active {
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                        inset -4px -4px 8px var(--shadow-light);
+            transform: scale(0.98);
+        }
+
+        .neumorphic-button:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+    <!-- The header is identical to index.html for consistent navigation -->
+    <header class="bg-[var(--bg-color)] shadow-md py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Link back to the main page -->
+            <a href="index.html" class="text-[25px] font-bold text-[var(--accent-color)]">
+                Elite<span class="text-[var(--primary-text)]">Mods</span>
+            </a>
+
+            <div class="flex items-center space-x-6">
+                <a href="index.html#about" class="text-[25px] text-[var(--primary-text)] hover:text-[var(--accent-color)] transition-colors duration-300">About Us</a>
+                
+                <button class="neumorphic-button py-2 px-6 text-[20px] font-medium">
+                    Login / Sign Up
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-12 px-6 md:px-12">
+        <!-- Section Title for the Brand -->
+        <section class="text-center mb-16">
+            <h1 class="text-[50px] font-extrabold mb-4 leading-tight text-[var(--heading-color)]">
+                <span class="text-[var(--primary-text)]">Tata</span> Parts & Accessories
+            </h1>
+            <p class="text-[25px] text-[var(--secondary-text)] max-w-3xl mx-auto">
+                Enhance your Tata's safety and style with our range of custom parts.
+            </p>
+        </section>
+
+        <!-- Grid of Products for this Brand -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <div class="neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://placehold.co/400x300/ef233c/edf2f4?text=Harrier+Rims" 
+                         alt="Tata Harrier Dark Edition Rims" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Harrier Dark Edition Rims</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Get the official all-black 18-inch alloy wheels for your Tata Harrier.</p>
+                </div>
+
+                <div class="neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://placehold.co/400x300/2b2d42/edf2f4?text=Nexon+Roof" 
+                         alt="Tata Nexon EV Roof Wrap" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Nexon EV Roof Wrap</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">High-quality vinyl roof wraps for the Nexon EV in various colors and finishes.</p>
+                </div>
+
+                <div class="neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://placehold.co/400x300/ef233c/edf2f4?text=Safari+Decals" 
+                         alt="Tata Safari Adventure Persona Decals" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Safari Adventure Decals</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Exclusive body decals from the Safari Adventure Persona edition.</p>
+                </div>
+
+                <div class="neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://placehold.co/400x300/2b2d42/edf2f4?text=Punch+Seats" 
+                         alt="Tata Punch Camo Edition Seat Covers" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Punch Camo Seat Covers</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Rugged camo-themed seat covers inspired by the Punch Camo Edition.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[var(--bg-color)] py-8 text-center text-[20px] text-[var(--secondary-text)]">
+        <p>&copy; 2025 Elite Auto Mods. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

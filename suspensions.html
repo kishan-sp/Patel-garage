@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Suspensions - Elite Auto Mods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* All styles are copied directly from index.html for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+        :root {
+            --bg-color: #EDF2F4;
+            --primary-text: #2B2D42;
+            --secondary-text: #2B2D42;
+            --accent-color: #D90429;
+            --heading-color: #EF233C;
+            --card-base: #eaebed;
+            --shadow-dark: #D0D3D6;
+            --shadow-light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'DM Serif Text', serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+        }
+
+        .neumorphic-card {
+            background-color: var(--card-base);
+            box-shadow: 10px 10px 20px var(--shadow-dark),
+                        -10px -10px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .neumorphic-card:hover {
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                        -6px -6px 12px var(--shadow-light);
+            transform: translateY(-2px);
+        }
+        
+        .neumorphic-button-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                        -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            border-radius: 0.5rem;
+        }
+        
+        .neumorphic-button-primary:hover {
+            background-color: #EF233C;
+            transform: translateY(-2px);
+        }
+        
+        .neumorphic-button-primary:active {
+             box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2);
+             transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+    <header class="bg-[var(--bg-color)] shadow-md py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-[25px] font-bold text-[var(--accent-color)]">
+                Elite<span class="text-[var(--primary-text)]">Mods</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html#about" class="text-[25px] text-[var(--primary-text)] hover:text-[var(--accent-color)] transition-colors duration-300">About Us</a>
+                <button class="neumorphic-button py-2 px-6 text-[20px] font-medium">
+                    Login / Sign Up
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-12 px-6 md:px-12">
+        <h1 class="text-[40px] font-extrabold mb-10 leading-tight text-[var(--heading-color)] text-center">
+            Performance Sport Suspensions
+        </h1>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://images.unsplash.com/photo-1610876126529-fb3aa7e9abc1?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="EliteMods Sport Suspension" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">EliteMods Coilover Kit</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Fully adjustable coilovers to lower your center of gravity and reduce body roll for superior handling.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹60,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.kwsuspensions.net/fileadmin/_processed_/0/9/csm_kw_gewindefahrwerke_club_sport_007_ee35a39716.jpg" 
+                    alt="KW V3 Coilover Kit" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">KW V3 Coilover System</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    High-performance coilovers offering independent rebound and compression damping adjustment for personalized handling.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹1,10,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://products.bilstein.com/images/performance/bilstein-b16-pss9-coilovers.jpg" 
+                    alt="Bilstein B16 Coilovers" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Bilstein B16 (PSS10)</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Single-adjustable coilover system with 10-stage damping adjustment for both street and track.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹95,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://eibach.com/media/image/a0/0b/b5/PRO-KIT_02.jpg" 
+                    alt="Eibach Pro-Kit Springs" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Eibach Pro-Kit Lowering Springs</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Performance lowering springs designed to improve handling and give your car an aggressive stance.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹30,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.tein.com/image/product/street_advance_z_main.jpg" 
+                    alt="Tein Street Advance Z Coilovers" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Tein Street Advance Z Coilovers</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Affordable and reliable coilovers with adjustable damping and ride height, perfect for daily driving and light track use.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹70,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.ohlins.com/app/uploads/2021/04/automotive-performance-line_main-image.jpg" 
+                    alt="Ohlins Road & Track Coilovers" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Ohlins Road & Track</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Premium motorsport-derived coilovers offering exceptional handling and ride quality.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹1,80,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.bcracing-na.com/wp-content/uploads/2020/01/BR-Series.jpg" 
+                    alt="BC Racing BR Series Coilovers" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">BC Racing BR Series</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Popular coilover line offering versatile adjustability for street and occasional track use.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹78,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://www.hrsprings.com/images/uploads/HR_coilovers.jpg" 
+                    alt="H&R Street Performance Coilovers" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">H&R Street Performance</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    German-engineered performance coilovers providing a sportier stance and improved handling dynamics.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹88,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+            
+            <div class="neumorphic-card rounded-xl p-6 flex flex-col items-center text-center">
+                <img src="https://meganracing.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/r/mr-cdk-cc03.jpg" 
+                    alt="Megan Racing EZ Street Coilovers" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-[25px] font-bold text-[var(--primary-text)] mb-2">Megan Racing EZ Street</h2>
+                <p class="text-[18px] text-[var(--secondary-text)] mb-4 flex-grow">
+                    Affordable and adjustable coilover kits designed for street performance and comfort.
+                </p>
+                <div class="text-[30px] font-bold text-[var(--primary-text)] mb-4">₹65,000</div>
+                <button class="w-full neumorphic-button-primary p-3 text-[20px] font-bold">Add to Cart</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-[var(--bg-color)] py-8 text-center text-[20px] text-[var(--secondary-text)] mt-16">
+        <p>&copy; 2025 Elite Auto Mods. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
