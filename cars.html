@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -452,4 +453,460 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TunedBeast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Tailwind Configuration for Neumorphism and colors */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+        :root {
+            --bg-color: #EDF2F4;
+            --primary-text: #2B2D42;
+            --secondary-text: #2B2D42;
+            --accent-color: #D90429;
+            --heading-color: #EF233C;
+            --card-base: #eaebed;
+            --shadow-dark: #D0D3D6;
+            --shadow-light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'DM Serif Text', serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+        }
+
+        /* Neumorphism specific styling for product cards */
+        .neumorphic-card {
+            background-color: var(--card-base);
+            box-shadow: 10px 10px 20px var(--shadow-dark),
+                -10px -10px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .neumorphic-card:hover {
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+            transform: translateY(-2px);
+        }
+
+        /* Neumorphic button style */
+        .neumorphic-button {
+            background-color: var(--card-base);
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            color: var(--primary-text);
+            border-radius: 9999px;
+            border: 2px solid var(--primary-text);
+        }
+
+        .neumorphic-button:active {
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
+            transform: scale(0.98);
+        }
+
+        .neumorphic-button:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Primary action button for forms */
+        .neumorphic-button-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            border-radius: 0.5rem;
+        }
+
+        .neumorphic-button-primary:hover {
+            background-color: #EF233C;
+            transform: translateY(-2px);
+        }
+
+        .neumorphic-button-primary:active {
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(0.98);
+        }
+
+        /* Solid card styling for brands */
+        .solid-brand-card {
+            background-color: #EDF2F4;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .solid-brand-card:hover {
+            background-color: #E0E5E7;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Modal specific styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-base);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 15px 15px 30px var(--shadow-dark),
+                -15px -15px 30px var(--shadow-light);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-button {
+            color: var(--primary-text);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--accent-color);
+        }
+
+        .form-toggle-button {
+            background-color: var(--card-base);
+            box-shadow: 3px 3px 6px var(--shadow-dark),
+                -3px -3px 6px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            color: var(--primary-text);
+            flex: 1;
+        }
+
+        .form-toggle-button.active {
+            color: var(--bg-color);
+            background-color: var(--accent-color);
+            box-shadow: inset 2px 2px 5px #8c0219,
+                inset -2px -2px 5px #ff0639;
+        }
+
+        .form-input {
+            background-color: var(--bg-color);
+            border: none;
+            box-shadow: inset 2px 2px 5px var(--shadow-dark),
+                inset -2px -2px 5px var(--shadow-light);
+            color: var(--primary-text);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: inset 1px 1px 3px var(--shadow-dark),
+                inset -1px -1px 3px var(--shadow-light),
+                0 0 0 2px var(--accent-color);
+        }
+
+        /* Cart button specific styling */
+        .cart-button {
+            position: relative;
+            background-color: var(--card-base);
+            box-shadow: 6px 6px 12px var(--shadow-dark),
+                -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+            color: var(--primary-text);
+            border-radius: 9999px;
+            border: 2px solid var(--primary-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            /* Adjust padding for better look */
+        }
+
+        .cart-button:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased">
+    <header class="bg-[var(--bg-color)] shadow-md py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="/cars" class="text-[25px] font-bold text-[var(--accent-color)]">
+                Patel <span class="text-[var(--primary-text)]">Garage & Co.</span>
+            </a>
+
+            <div class="flex items-center space-x-6">
+                <a href="aboutus.html" class="text-[25px] text-[var(--primary-text)] 
+                hover:text-[var(--accent-color)] transition-colors duration-300">
+                    About Us</a>
+
+                <!-- Add to Cart Button in Header -->
+                <button id="cartButton" class="cart-button py-2 px-6 text-[20px] font-medium"
+                    onclick="window.location.href='cart.html'">
+                    <!-- Shopping cart icon (using inline SVG for simplicity) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 mr-2">
+                        <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 
+                        .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 
+                        3.63c0 .414.336.75.75.75h11.25a.75.75 0 0 0 0-1.5H9.017a2.25 
+                        2.25 0 0 1 2.249-2.25h4.502a2.25 2.25 0 0 0 2.244-2.028L21.94 
+                        4.72c.11-.447-.34-.901-.775-.901H3.625l-.117-.563a.75.75 0 0 
+                        0-.875-.53zM18.25 18a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 
+                        3zM6.75 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                    </svg>
+                    Cart
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+
+                <!-- User Info and Logout Button -->
+                <div id="userSection" class="flex items-center space-x-4" style="display: none;">
+                    <span id="userName" class="text-[18px] text-[var(--primary-text)] font-medium"></span>
+                    <button id="logoutBtn" class="neumorphic-button py-2 px-6 text-[18px] font-medium text-red-600 hover:text-red-700"
+                        onclick="logout()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
+                            <path fill-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9a.75.75 0 01-1.5 0V5.25z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v6.75l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V3a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                        Logout
+                    </button>
+                </div>
+
+                <!-- Login Button (shown when not logged in) -->
+                <button id="loginBtn" class="neumorphic-button py-2 px-6 text-[20px] font-medium"
+                    onclick="window.location.href='templates/login.html'">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2">
+                        <path fill-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 013 0v2.25H21a.75.75 0 010 1.5H10.5v2.25a1.5 1.5 0 01-3 0V7.5H3a.75.75 0 010-1.5h4.5V3.75z" clip-rule="evenodd" />
+                    </svg>
+                    Login / Sign Up
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-12 px-6 md:px-12">
+        <section class="text-center mb-16">
+            <h1 class="text-[50px] font-extrabold mb-4 leading-tight text-[var(--heading-color)]">
+                Unleash Your Ride's <span class="text-[var(--primary-text)]">True Potential</span>
+            </h1>
+            <p class="text-[25px] text-[var(--secondary-text)] max-w-3xl mx-auto">
+                Discover premium, pocket-friendly car modification parts and accessories to transform your vehicle.
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-[40px] font-bold text-center mb-10 text-[var(--heading-color)]">Our Premium Parts &
+                Accessories</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product Cards - Flask route links -->
+                <a href="body-kit.html"
+                    class="block neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1721909406776-db318b25e573?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Aerodynamic Body Kit" class="rounded-lg mb-4 w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/200x150/4C4E50/E0E0E0?text=Image+Load+Error';">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Aerodynamic Body Kit</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Enhance aesthetics and
+                        performance with our sleek, high-quality aerodynamic body kits.</p>
+                </a>
+                <a href="exhausts.html"
+                    class="block neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1692309175422-b9d614f4764e?q=80&w=2624&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Performance Exhausts" class="rounded-lg mb-4 w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/200x150/4C4E50/E0E0E0?text=Image+Load+Error';">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Performance Exhausts</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Unleash a powerful sound and
+                        boost horsepower with our precision-engineered exhausts.</p>
+                </a>
+                <a href="suspensions.html"
+                    class="block neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1610876126529-fb3aa7e9abc1?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Sport Suspensions" class="rounded-lg mb-4 w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/200x150/4C4E50/E0E0E0?text=Image+Load+Error';">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Sport Suspensions</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Improve handling and ride
+                        comfort with our advanced sport suspension systems.</p>
+                </a>
+                <a href="tyres.html"
+                    class="block neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1477823986828-5aff156284aa?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="High-Performance Tyres" class="rounded-lg mb-4 w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/200x150/4C4E50/E0E0E0?text=Image+Load+Error';">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">High-Performance Tyres</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Get superior grip and control
+                        with our range of durable, high-performance tyres.</p>
+                </a>
+                <a href="wheels.html"
+                    class="block neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://images.unsplash.com/photo-1604505024097-892b108c0974?q=80&w=2674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Custom Alloy Wheels" class="rounded-lg mb-4 w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/200x150/4C4E50/E0E0E0?text=Image+Load+Error';">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">Custom Alloy Wheels</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Upgrade your car's look with our
+                        stylish and lightweight custom alloy wheels.</p>
+                </a>
+                <a href="ppf-kit.html"
+                    class="block neumorphic-card rounded-xl overflow-hidden shadow-xl p-6 flex flex-col items-start">
+                    <img src="https://as1.ftcdn.net/v2/jpg/06/05/57/52/1000_F_605575286_CFpokkxmYbzRZ5nZvnz3pCjabtKDyP8P.jpg"
+                        alt="Paint Protection Film Kit" class="rounded-lg mb-4 w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/200x150/4C4E50/E0E0E0?text=Image+Load+Error';">
+                    <h3 class="text-[25px] font-semibold mb-2 text-[var(--accent-color)]">PPF Kit</h3>
+                    <p class="text-[15px] text-[var(--secondary-text)] leading-relaxed">Protect your vehicle's paint
+                        with our durable and invisible Paint Protection Film kits.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-[40px] font-bold text-center mb-10 text-[var(--heading-color)]">Trusted Brands We Carry</h2>
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 items-center justify-center">
+                <!-- Brand Cards - Flask route links -->
+                <a href="hyundai.html" class="block">
+                    <div
+                        class="p-4 solid-brand-card rounded-lg flex items-center justify-center h-24 text-[25px] text-[#2B2D42] font-semibold">
+                        Hyundai</div>
+                </a>
+                <a href="maruti.html" class="block">
+                    <div
+                        class="p-4 solid-brand-card rounded-lg flex items-center justify-center h-24 text-[25px] text-[#2B2D42] font-semibold">
+                        Maruti</div>
+                </a>
+                <a href="ford.html" class="block">
+                    <div
+                        class="p-4 solid-brand-card rounded-lg flex items-center justify-center h-24 text-[25px] text-[#2B2D42] font-semibold">
+                        Ford</div>
+                </a>
+                <a href="toyota.html" class="block">
+                    <div
+                        class="p-4 solid-brand-card rounded-lg flex items-center justify-center h-24 text-[25px] text-[#2B2D42] font-semibold">
+                        Toyota</div>
+                </a>
+                <a href="tata.html" class="block">
+                    <div
+                        class="p-4 solid-brand-card rounded-lg flex items-center justify-center h-24 text-[25px] text-[#2B2D42] font-semibold">
+                        Tata</div>
+                </a>
+                <a href="kia.html" class="block">
+                    <div
+                        class="p-4 solid-brand-card rounded-lg flex items-center justify-center h-24 text-[25px] text-[#2B2D42] font-semibold">
+                        Kia</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[var(--bg-color)] py-8 text-center text-[20px] text-[var(--secondary-text)]">
+        <p>&copy; 2025 TunedBeast. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check user session status and update UI accordingly
+        function checkUserSession() {
+            fetch('/check-session', {
+                method: 'GET',
+                credentials: 'same-origin'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.logged_in) {
+                    // User is logged in
+                    document.getElementById('userSection').style.display = 'flex';
+                    document.getElementById('loginBtn').style.display = 'none';
+                    document.getElementById('userName').textContent = `Welcome, ${data.user.UserName}!`;
+                } else {
+                    // User is not logged in
+                    document.getElementById('userSection').style.display = 'none';
+                    document.getElementById('loginBtn').style.display = 'inline-flex';
+                }
+            })
+            .catch(error => {
+                console.error('Error checking session:', error);
+                // Default to showing login button
+                document.getElementById('userSection').style.display = 'none';
+                document.getElementById('loginBtn').style.display = 'inline-flex';
+            });
+        }
+
+        // Logout function
+        function logout() {
+            fetch('/logout', {
+                method: 'GET',
+                credentials: 'same-origin'
+            })
+            .then(() => {
+                // Redirect to login page
+                window.location.href = '/login';
+            })
+            .catch(error => {
+                console.error('Error during logout:', error);
+                // Still redirect to login page
+                window.location.href = '/login';
+            });
+        }
+
+        // Check session when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserSession();
+        });
+
+        // Cart functionality (existing code)
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartCount();
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = cart.length;
+        }
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+    </script>
+
+</body>
+
+>>>>>>> db2fcd5b0c07db3ba66db64ce779c1002e286f89
 </html>

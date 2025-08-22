@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Enhanced styling for login page */
 .container button:hover {
     background-color: #4527a0;
@@ -195,4 +196,203 @@
 
 .container::-webkit-scrollbar-thumb:hover {
     background: #4527a0;
+=======
+/* Enhanced styling for login page */
+.container button:hover {
+    background-color: #4527a0;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);
+}
+
+.container button.hidden:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.container input:focus {
+    border: 2px solid #512da8;
+    box-shadow: 0 0 10px rgba(81, 45, 168, 0.3);
+    transform: translateY(-1px);
+}
+
+.container input.success {
+    border-color: #27ae60;
+    background-color: #f0f9ff;
+    box-shadow: 0 0 8px rgba(39, 174, 96, 0.2);
+}
+
+.container input.error {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.2);
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.social-icons a:hover {
+    background-color: #512da8;
+    color: white;
+    border-color: #512da8;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(81, 45, 168, 0.3);
+}
+
+/* Enhanced form animations */
+.form-container {
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.container.active .sign-in {
+    transform: translateX(100%) scale(0.95);
+    opacity: 0.8;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%) scale(1);
+    opacity: 1;
+    z-index: 5;
+}
+
+/* Enhanced toggle animations */
+.toggle-container {
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toggle {
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Loading state enhancements */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification animations */
+.notification {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 20px;
+        min-height: 400px;
+        border-radius: 20px;
+    }
+    
+    .form-container {
+        padding: 0 20px;
+    }
+    
+    .toggle-container {
+        display: none;
+    }
+    
+    .sign-in, .sign-up {
+        width: 100%;
+        opacity: 1;
+        position: relative;
+        transform: none !important;
+    }
+    
+    .container.active .sign-in {
+        transform: none !important;
+        opacity: 0;
+    }
+    
+    .container.active .sign-up {
+        transform: none !important;
+        opacity: 1;
+        z-index: 5;
+    }
+    
+    .container h1 {
+        font-size: 24px;
+    }
+    
+    .container input {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        min-height: 350px;
+    }
+    
+    .form-container {
+        padding: 0 15px;
+    }
+    
+    .container button {
+        padding: 12px 30px;
+        font-size: 11px;
+    }
+}
+
+/* Accessibility improvements */
+.container button:focus {
+    outline: 2px solid #512da8;
+    outline-offset: 2px;
+}
+
+.container input:focus {
+    outline: none;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.2s ease;
+}
+
+/* Enhanced visual feedback */
+.container button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(81, 45, 168, 0.3);
+}
+
+/* Custom scrollbar for webkit browsers */
+.container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #512da8;
+    border-radius: 3px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #4527a0;
+>>>>>>> db2fcd5b0c07db3ba66db64ce779c1002e286f89
 } 
