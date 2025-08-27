@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import sqlite3
 
 # Connect to SQLite database (creates the file if it doesn't exist)
@@ -18,7 +17,6 @@ cursor.execute('''
 # Commit changes and close connection
 conn.commit()
 conn.close()
-=======
 import sqlite3
 
 # Connect to SQLite database (creates the file if it doesn't exist)
@@ -38,4 +36,3 @@ cursor.execute('''
 # Commit changes and close connection
 conn.commit()
 conn.close()
->>>>>>> db2fcd5b0c07db3ba66db64ce779c1002e286f89
